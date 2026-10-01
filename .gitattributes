@@ -1,0 +1,15 @@
+# Normalize line endings to LF in the working tree on every platform.
+# Without this, Windows clones check out CRLF and Prettier (endOfLine: lf by
+# default) flags every file, failing pnpm format:check and CI. Attributes take
+# precedence over core.autocrlf, so this keeps the working tree LF everywhere.
+* text=auto eol=lf
+
+# Lock binary files so git never tries to translate them.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
